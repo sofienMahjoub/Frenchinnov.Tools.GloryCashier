@@ -1,0 +1,81 @@
+﻿<Window x:Class="Frenchinnov.GloryCashier.GloryCashier"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        mc:Ignorable="d" 
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        xmlns:helpers="clr-namespace:Frenchinnov.GloryCashier.Helpers"
+        WindowStartupLocation="CenterScreen"  WindowStyle="None" ResizeMode="NoResize"
+        Title="GloryCashier" Height="410" Width="550" Background="White">
+    <Window.Resources>
+        <ResourceDictionary> 
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Frenchinnov.GloryCashier;component/Assets/Themes/Style.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <helpers:StringNullOrEmptyToVisibilityConverter x:Key="StringNullOrEmptyToVisibilityConverter"/>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Border  BorderThickness="1" BorderBrush="Gray">
+        <Grid Background="WhiteSmoke">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="220"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/> 
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="65"/>
+            </Grid.RowDefinitions>
+            <Image Source="pack://application:,,,/Frenchinnov.GloryCashier;component/Assets/Images/gloryCash.png" Grid.Column="0" Grid.Row="1" Margin="-40" Grid.RowSpan="2"/>
+            <Border Grid.ColumnSpan="2" Background="#FF383838">
+                <Label   VerticalAlignment="Center" HorizontalAlignment="Center" Content="Caisse automatique"  FontSize="25"  Foreground="White" />
+            </Border>
+
+            <Border CornerRadius="10,10,0,0" Margin="10,20,20,10" Grid.Column="1" Grid.Row="1" Background="White" BorderThickness="1" BorderBrush="Gray">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Border  CornerRadius="10,10,0,0"  Background="Green">
+                        <Label   VerticalAlignment="Center" HorizontalAlignment="Center" Content="Montant à payer"  FontSize="18"  Foreground="White" />
+                    </Border>
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock   VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding SalesTotal,StringFormat=\{0:F\}}" FontSize="25"  Foreground="Black" />
+                        <TextBlock   VerticalAlignment="Center" HorizontalAlignment="Center" Text="€" FontSize="25" Margin="2,0,0,0"  Foreground="Black" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Border CornerRadius="10,10,0,0"   Margin="10,10,20,20" Grid.Column="1" Grid.Row="2" Background="White" BorderThickness="1" BorderBrush="Gray">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Border  CornerRadius="10,10,0,0"  Background="Blue">
+                        <Label   VerticalAlignment="Center" HorizontalAlignment="Center" Content="Montant encaissé"  FontSize="18"  Foreground="White" />
+                    </Border>
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding DepositTotal,StringFormat=\{0:F\}}" FontSize="25"  Foreground="Black" />
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="€"  Margin="2,0,0,0"  FontSize="25"  Foreground="Black" />
+                    </StackPanel>
+                </Grid>
+
+            </Border>
+
+            <Border  Grid.Column="0"  Grid.ColumnSpan="2" Visibility="{Binding GloryMessage, Converter={StaticResource StringNullOrEmptyToVisibilityConverter}}" Grid.Row="3"  Background="IndianRed" BorderThickness="0,1,0,0" >
+                <TextBlock Text="{Binding GloryMessage}" Foreground="White"   TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"   Margin="5"/>
+            </Border>
+                
+            <Border  Grid.Column="0"  Grid.ColumnSpan="2" Grid.Row="4" Background="LightGray" BorderThickness="0,1,0,0" BorderBrush="Gray">
+                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <Button Content="Annuler" Margin="10" IsEnabled="{Binding CancelEnabled}" Click="CancelCmd_Click"   Background="#FFF9922A"  Height="40" Width="180" BorderBrush="{x:Null}"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{43EC9EF9-DEAA-4724-9081-638B5F6C6F44}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FccInterfaceLib</RootNamespace>
+    <AssemblyName>FccInterfaceLib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>.\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FccConst.cs" />
+    <Compile Include="FccEvent.cs" />
+    <Compile Include="FccObject.cs" />
+    <Compile Include="FccOperator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\BrueBoxService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BrueBoxService\BrueBoxMessaging.wsdl" />
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.AdjustTimeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.AdjustTimeResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.CashinCancelOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.CashinCancelResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.CashoutOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.CashoutResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.ChangeCancelOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.ChangeCancelResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.ChangeOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.ChangeResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.CloseExitCoverOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.CloseExitCoverResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.CloseOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.CloseResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.CollectOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.CollectResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.CounterClearOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.CounterClearResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.DisableDenomResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.DisableDenomResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.EnableDenomResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.EnableDenomResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.EndCashinOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.EndCashinResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.EndReplenishmentFromCassetteOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.EndReplenishmentFromCassetteResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.EndReplenishmentFromEntranceOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.EndReplenishmentFromEntranceResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.EventNotificationStatusOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.EventNotificationStatusResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.EventOfflineRecoveryOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.EventOfflineRecoveryResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.GetLastResponseOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.GetLastResponseResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.GetStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.InventoryOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.InventoryResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.LockUnitOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.LockUnitResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.LoginUserOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.LoginUserResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.LogoutUserOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.LogoutUserResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.OccupyOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.OccupyResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.OpenExitCoverOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.OpenExitCoverResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.OpenOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.OpenResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.PowerControlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.PowerControlResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.RASSpecialAPIOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.RASSpecialAPIResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.RefreshSalesTotalOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.RefreshSalesTotalResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.RegisterEventOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.RegisterEventResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.ReleaseOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.ReleaseResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.ReplenishmentFromEntranceCancelOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.ReplenishmentFromEntranceCancelResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.ResetOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.ResetResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.ReturnCashResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.ReturnCashResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.RomVersionOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.RomVersionResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.SetExchangeRateOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.SetExchangeRateResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.SetRestrictionOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.SetRestrictionResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.StartCashinOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.StartCashinResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.StartDownloadOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.StartDownloadResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.StartLogreadOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.StartLogreadResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.StartReplenishmentFromCassetteOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.StartReplenishmentFromCassetteResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.StartReplenishmentFromEntranceOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.StartReplenishmentFromEntranceResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.StatusResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.UnLockUnitOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.UnLockUnitResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.UnRegisterEventOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.UnRegisterEventResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.UpdateDeviceCassetteSettingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.UpdateDeviceCassetteSettingResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.UpdateManualDepositTotalOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.UpdateManualDepositTotalResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.UpdateSettingFileOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrueBoxService\FccInterfaceLib.BrueBoxService.UpdateSettingFileResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BrueBoxService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BrueBoxService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BrueBoxService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BrueBoxService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
